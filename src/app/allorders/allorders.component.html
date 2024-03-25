@@ -1,0 +1,51 @@
+<section class="container py-5 my-5">
+    <div class="container py-4">
+
+
+<div class="px-md-5 shadow rounded-3">
+
+    <h1 class="py-3 px-2">My orders:
+
+    </h1>
+    <h2 *ngIf="userId==''" class="text-center">You have no orders</h2>
+    <div *ngFor="let order of _orders"  class="  py-3 px-md-3 px-2">
+        <div   class="d-flex justify-content-between align-items-center">
+    
+       
+        <h5 class="fw-bold  my-3">Order ID:<span class="mainColorText"> {{order.id}} </span></h5>
+        <h5 class="fw-bold my-3">Date placed:<span class="mainColorText"> {{order.paidAt.slice(0,10)}} </span></h5>
+    
+    </div>
+    
+            <div  class="d-flex justify-content-between align-items-center">
+    
+    
+             <h5 class="fw-bold">Total price:<span class="mainColorText"> {{order.totalOrderPrice}} EGP</span></h5>
+            
+            
+           
+        </div>
+    
+    <div class="mx-auto text-center mt-3">
+        <button [routerLink]="['/orderDetails',order.id,userId]"  class="btn mainColor text-white px-3 mx-auto d-inline-block">order details</button>
+    
+    </div>
+    <div class="w-75 bg-secondary-subtle mx-auto my-4 " style="height: 1px;"></div>
+    
+    </div>
+</div>
+
+    
+    </div>
+    
+    
+   
+    
+    
+       
+    
+            
+    
+    
+    </section>
+    

@@ -1,0 +1,9 @@
+.addToCart{
+
+    transition: all .4s;
+
+}
+
+button:hover{
+    background-color: #479647;
+}

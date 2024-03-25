@@ -1,0 +1,44 @@
+<section class="pt-5 mt-5">
+    <div class="pt-5  container ">
+        <div class="row g-3 p-2 w-75 mx-auto shadow rounded-2">
+
+            <div class="col-md-3 p-3">
+                <div>
+                    <owl-carousel-o [options]="customOptions">
+
+                        <ng-container *ngFor="let image of _Product?.images">
+                          <ng-template carouselSlide >
+                            <img [src]="image" [alt]="_Product?.title" [title]="_Product?.title">
+                          </ng-template>
+                        </ng-container>
+                    
+                      </owl-carousel-o>
+                </div>
+            </div>
+            <div class="col-md-9 p-3">
+                <div class="d-flex flex-column justify-content-center align-items-start">
+
+                    <h2 class="py-3">{{_Product?.title}}</h2>
+                    <p class="text-muted ">{{_Product?.description}}</p>
+
+                    <div class="d-flex w-100 justify-content-between">
+                        <p class="align-self-start">{{_Product?.price|currency:'EGP'}}</p>
+                        <p class="align-self-end fs-5"><i class="fa-solid fa-star ratingStar"> </i> {{_Product?.ratingsAverage}}</p>
+                    </div>
+                    
+                    <div class="d-flex align-self-center gap-5 justify-content-between">
+                        <button (click)="addToCart(id)" class="btn mainColor text-white px-3 mx-auto d-inline-block addToCart ">Add +</button>
+
+
+                       <a (click)="addRemoveToWishList(id)" class="float-end d-inline-block text-end cursor-pointer"><i [style.color]="wishLisIdArray.includes($any(_Product?._id))? '#F5514B':'' " class=" fs-3  fa-solid fa-heart"></i> </a>
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>

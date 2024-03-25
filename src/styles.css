@@ -1,0 +1,208 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap');
+
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+:root {
+    --main-color: #0aad0a;
+    --light-color: #f0f3f2;
+    --shadow: rgba(145, 158, 171, .2) 0px 2px 4px -1px, rgba(145, 158, 171, .14) 0px 4px 5px 0px, rgba(145, 158, 171, .12) 0px 1px 10px 0px;
+    --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --rating-color: #ffc908;
+    --bs-btn-disabled-bg:var(--main-color);
+}
+html{
+    padding: 0% ;
+    margin: 0;
+}
+*{
+    font-family:var(--font-family);
+}
+
+body {
+    font-family: var(--font-family) !important;
+}
+
+.rating-color {
+    color: var(--rating-color);
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+a,
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.product:hover {
+    box-shadow: var(--shadow);
+    border: solid 1px var(--main-color);
+}
+
+.product .btn {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(100%);
+    opacity: 0;
+}
+
+.product:hover .btn {
+    opacity: 1;
+    transform: translateY(0%);
+
+}
+
+.font-sm {
+    font-size: 14px;
+}
+
+.text-main {
+    color: var(--main-color);
+}
+
+.bg-main {
+    background-color: var(--main-color) !important;
+}
+
+.bg-main-light {
+    background-color: var(--light-color) !important;
+}
+
+.mainColor{
+    background-color: var(--main-color) ;
+}
+.mainColorText{
+    color: var(--main-color);
+}
+.lightColor{
+    background-color: var(--light-color);
+}
+.iconContainer{
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+}
+nav a{
+    color: var(--main-color);
+}
+
+.secColor{
+    background-color:#1A252F;
+}
+#home,#about{
+    background-color: #1ABC9C;
+}
+.starline{
+    width: 75px;
+    background-color: white;
+    height: 4px;
+}
+.navButton{
+    transition: all .4s;
+}
+
+
+.navButton:hover{
+    color: white !important;
+    background-color: var(--main-color);
+
+}
+
+
+.portCard i{
+    font-size: 60px !important;
+    position: absolute;
+    color: white;
+    opacity: 0;
+    transition: all .5s;
+}
+.portCard:hover .caption{
+    opacity: .8;
+
+}
+.portCard:hover i{
+    opacity: 1;
+}
+.register-button{
+    background-color: var(--main-color);
+    transition: all .5s;
+}
+.register-button:hover{
+    background-color: #79CA70;
+}
+
+#forgotPassword{
+    transition: all .4s;
+    cursor: pointer;
+}
+
+#forgotPassword:hover{
+    color: var(--main-color);
+}
+mat-form-field{
+    padding: 0% !important;
+    margin: 0 !important;
+
+}
+
+.form-field-extra-space {
+    padding: 100px;;
+  }
+
+  .mainColor{
+    background-color: var(--main-color);
+  }
+.loadingScreen{
+    position: absolute;
+    z-index: 99;
+    inset: 0;
+    background-color: rgba(0, 0, 0, .2);
+}
+
+.ratingStar{
+    color: var(--rating-color);
+}
+.fa-heart{
+    transition: all .4s;
+}
+.fa-heart:hover{
+    color: #F5514B !important;
+}
+
+
+.add{
+    transition: all .4s;
+    transform: translateY(80px);
+    
+}
+.add:hover{
+    background-color: #79CA70;
+    
+}
+.productCard{
+    transition: all .4s;
+}
+.productCard:hover{
+    box-shadow:  0px 0px 10px 1px var(--main-color);
+}
+.productCard:hover .add{
+    transform:translateY(0px);
+    opacity: 1 !important;
+}
+
+section{
+    padding-top: 10%;
+}
+.bg-light-grey{
+    background-color: rgb(250, 250, 250);
+    
+}
+.cartSymbol{
+    transition: all .4s;
+}
+.cartSymbol:hover {
+    color: var(--main-color) !important;
+}

@@ -1,0 +1,101 @@
+<section class="container py-5 my-5">
+<div class="container py-4">
+    <div height="50" class="row g-0">
+        <div class="col-md-8">
+            <div>
+                <owl-carousel-o [options]="customOptions">
+                    <ng-template carouselSlide><img  class="h-100 my-auto" src="../../assets/slider-image-1.jpeg" alt=""></ng-template>  
+                    <ng-template carouselSlide><img class="h-100 my-auto" src="../../assets/slider-image-2.jpeg" alt=""></ng-template>  
+                    <ng-template carouselSlide><img class="h-100 my-auto" src="../../assets/slider-image-3.jpeg" alt=""></ng-template>  
+                  </owl-carousel-o>
+            </div>
+            
+        </div>
+
+        <div class="col-md-4">
+            
+                <img class="w-100" src="../../assets/grocery-banner.png" alt="">
+
+            
+            
+                <img class="w-100" src="../../assets/grocery-banner-2.jpeg" alt="">
+
+            
+            
+
+            
+        </div>
+    </div>
+
+</div>
+
+
+<div class="container">
+
+
+    <owl-carousel-o [options]="newOptions">
+  
+      <ng-container *ngFor="let slide of _category">
+        <ng-template carouselSlide >
+            <div class="d-flex justify-content-center align-items-center overflow-hidden position-relative" style="height: 250px;">
+                <img [src]="slide.image" class="w-100" [alt]="slide.name" [title]="slide.name">
+
+            </div>
+            <h4 class="text-center">{{slide.name}}</h4>
+
+        </ng-template>
+      </ng-container>
+  
+    </owl-carousel-o>
+
+
+</div>
+
+
+    <div class="py-5">
+
+       
+
+
+
+
+
+        <input type="text" [(ngModel)]="searchINput" class="w-75 my-3 mx-auto form-control" placeholder="search">
+        <div class="row g-3 mb-3">
+            <div *ngFor="let Product of _Product.slice(0,20)|search :searchINput  " class="col-lg-3 col-md-6 ">
+                <div class="px-2 py-2 productCard rounded-3 overflow-hidden">
+                    <div class="cursor-pointer" [routerLink]="['/productDetails',Product._id]">
+    
+                        <div class="">
+                            <img [src]="Product.imageCover" [alt]="Product.title" [title]="Product.title" class="w-100">
+                       </div>
+                       <h5 class="fs-6 mainColorText">{{Product.category.name}} </h5>
+                       <h5 class="fs-6">{{Product.subcategory[0].name}} </h5>
+                       <div class="d-flex justify-content-between">
+                           <p>{{Product.price |currency: 'EGP'}}</p>
+                           <p><i class="fa-solid fa-star ratingStar"> </i> {{Product.ratingsAverage}}</p>
+       
+                       </div>
+                       
+    
+                    </div>
+
+                    <a (click)="addRemoveToWishList(Product._id)" class="position-relative z-3 d-block text-end cursor-pointer"><i [style.color]="wishLisIdArray.includes(Product._id)? '#F5514B':'' " class=" fs-3  fa-solid fa-heart"></i> </a>
+                    <div class="d-flex justify-content-center">
+                        <button (click)="addToCart(Product._id)" class="btn mainColor text-white px-3 mx-auto d-inline-block add opacity-0">Add +</button>
+    
+                    </div>
+                    
+                </div>
+    
+            </div>
+    
+        </div>
+
+
+    </div>
+
+        
+
+
+</section>

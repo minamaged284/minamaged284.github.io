@@ -1,0 +1,48 @@
+<section class="container py-5 my-5">
+    <div class="d-flex justify-content-between align-items-center mt-4">
+        <h2  class="fw-bold">Order: <span class="mainColorText"># {{_orders.id}}</span> </h2>
+    </div>
+    <div class="container py-4 px-md-4 rounded-2 bg-light shadow mt-4">
+   
+
+
+       <div class="container p-4 rounded-2 bg-light">
+         <h4 class="fw-bold">Total price:<span class="mainColorText"> {{this._orders.totalOrderPrice}} </span></h4>
+        
+    </div>
+
+
+
+       <div *ngFor="let product of _orders.cartItems" class="mt-3 px-5 row align-items-center">
+        <div class="col-md-2">
+            <div>
+                <img [src]="product.product.imageCover" class="w-100" alt="">
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class=" d-flex justify-content-between align-items-center">
+                <div class="">
+                    <h4 class="my-3">{{product.product.title}}</h4>
+                    <h6>Price: <span class="mainColorText">{{product.price}} EGP</span></h6>
+                    <h6>Count: <span class="mainColorText"> {{product.count}}</span> </h6>
+
+
+                </div>
+
+                
+            </div>
+
+            
+        </div>
+
+            <div class="w-75 bg-secondary-subtle mx-auto my-5 " style="height: 1px;"></div>
+       </div>
+
+    </div>
+
+    
+            
+    
+    
+    </section>
+    

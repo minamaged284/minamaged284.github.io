@@ -1,0 +1,59 @@
+<section class="container py-5 my-5">
+
+
+    <div class="container shadow-sm w-75 p-3 mb-5 bg-light rounded-4 overflow-hidden">
+        <div class="row g-2 ">
+            <div class="col-md-6">
+                <div>
+                    <img [src]="_brand.image" class="w-100" alt="">
+                </div>
+                
+            </div>
+    
+            <div class="col-md-6 d-flex justify-content-center align-items-center">
+                    <h2 class="text-center mainColorText">{{_brand.name}}</h2>
+            </div>
+    
+        </div>
+    </div>
+    
+        
+        
+         <div class="row g-3 mb-3">
+                    <div *ngFor="let Product of _BrandProducts |brandProductsPipe:id  " class="col-lg-3 col-md-6 ">
+                        <div class="px-2 py-2 productCard rounded-3 overflow-hidden">
+                            <div class="cursor-pointer" [routerLink]="['/productDetails',Product._id]">
+            
+                                <div class="">
+                                    <img [src]="Product.imageCover" [alt]="Product.title" [title]="Product.title" class="w-100">
+                               </div>
+                               <h5 class="fs-6 mainColorText">{{Product.category.name}} </h5>
+                               <h5 class="fs-6">{{Product.subcategory[0].name}} </h5>
+                               <div class="d-flex justify-content-between">
+                                   <p>{{Product.price |currency: 'EGP'}}</p>
+                                   <p><i class="fa-solid fa-star ratingStar"> </i> {{Product.ratingsAverage}}</p>
+               
+                               </div>
+            
+                            </div>
+                            <a (click)="addRemoveToWishList(Product._id)" class="d-block text-end cursor-pointer"><i [style.color]="wishLisIdArray.includes(Product._id)? '#F5514B':'' " class=" fs-3  fa-solid fa-heart"></i> </a>
+    
+                            <div class="d-flex justify-content-center">
+                                <button (click)="addToCart(Product._id)" class="btn mainColor text-white px-3 mx-auto d-inline-block add ">Add +</button>
+            
+                            </div>
+                            
+                        </div>
+            
+                    </div>
+            
+                </div>
+        
+        
+    
+        
+                
+        
+        
+        </section>
+        
